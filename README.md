@@ -1,3 +1,3 @@
 # AmazonScrapper
 
-!()[amazonscrapper.png)
+!()[AmazonScrapper.png)

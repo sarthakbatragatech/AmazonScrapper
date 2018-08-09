@@ -5,7 +5,7 @@ This project performs web-scraping on www.amazon.com with the Python package Bea
 ## How can this help you?
 The initial inspiration for this project was to get a dump of Amazon ASIN codes, or ID's for any product category. API requests on those ASIN codes can give a detailed analysis of the inventory. However, services usually rate-limit your requests or make you pay a decent fee. This can be a problem, as I found out when tracking kitchen-ware over a month to visualize fluctuations. Thus, I decided to make a minimal but effective version which doesn't need any API requests.  
 
-As the images below will indicate, this can also be invaluable to small and new business in trying to gauge competition. Additionaly, investors can use this to monitor an entire commodity space. 
+As the images below will indicate, this can also be invaluable to small and new business in trying to gauge competition. Additionally, investors can use this to monitor an entire commodity space. 
 
 #### Product Analysis
 ![images/Product Analysis](images/ProductAnalysis.png)

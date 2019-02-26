@@ -5,17 +5,22 @@ from time import gmtime, strftime
 
 a = []
 url_str = input("Enter the product category you want to search for: ")
-try:
-	str1, str2 = url_str.split()
-except ValueError:
-	str2 = "empty"
+url = []
 
-if (str2 == "empty"):
-	url = "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=" + url_str
-else:
-	url = "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=" + str1 + "+" + str2
+# Hacky fix
+words = url_str.split()
+var = len(words)
 
-# add header
+if var == 1:
+	url = "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=" + words[0]
+
+if var == 2:
+	url = "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=" + words[0] + "+" + words[1]
+
+elif var == 3:
+	url = "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=" + words[0] + "+" + words[1] + "+" + words[2]
+
+# Add header
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'}
 
 r = requests.get(url, headers=headers)
@@ -24,17 +29,17 @@ r = requests.get(url, headers=headers)
 
 soup = BeautifulSoup(r.content, "html.parser")
 
-#Csv writing setup
+# Csv writing setup
 filename = "products.csv"
 f = open(filename, "w", encoding='utf-8')
 
-#Grab time and format string 
+# Grab time and format string 
 strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
 headers ="Asin, Name," + "Price : " + strftime("%Y-%m-%d %H:%M:%S", gmtime()) + ", Number of Reviews\n"
 f.write(headers)
 
-#Regex if needed
+# Regex if needed
 # a = re.compile((?<=data-asin))
 # Used this to beautify and inspect the html/xml data ----> http://jsbeautifier.org/
 

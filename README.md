@@ -1,5 +1,7 @@
 # AmazonScrapper
 
+**NOTE**: This repo is no longer maintained due to constant CSS changes on amazon's website. Thank you! :-)
+
 This project performs web-scraping on www.amazon.com with the Python package Beautiful Soup. The user can enter any product category and a *'csv'* file with the Amazon ASIN codes, product name, price, and number of reviews is generated. 
 
 ## How can this help you?

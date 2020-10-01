@@ -27,7 +27,7 @@ r = requests.get(url, headers=headers)
 
 # print(r) # print request to see if Response 200
 
-soup = BeautifulSoup(r.content, "html.parser")
+soup = BeautifulSoup(r.content, "lxml")
 
 # Csv writing setup
 filename = "products.csv"
